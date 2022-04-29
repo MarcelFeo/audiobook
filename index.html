@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AudioBook</title>
+    <link rel="stylesheet" href="styles.css">
     <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <video width="720" height="560" autoplay muted></video>
-        <pre data-text style="font-size: 2rem; font-family: inherit; width: 100%; white-space: pre-wrap;"></pre>
+        <div class="video-container">
+            <video width="720" height="560" autoplay muted></video>
+        </div>
+        <div class="border-video"></div>
+
+        <div class="text-container">
+            <p>Posicione o texto na câmera e quando estiver pronto aperte a barra de espaço</p>
+        </div>
+
+        <pre data-text style="font-size: 2rem; font-family: inherit; width: 100%; white-space: pre-wrap; text-align: center;"></pre>
     </div>
 </body>
 </html>

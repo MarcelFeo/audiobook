@@ -1,5 +1,5 @@
 const video = document.querySelector("video");
-const textElement = document.querySelector("[data-text");
+const textElement = document.querySelector("[data-text]");
 
 async function setUp() {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
