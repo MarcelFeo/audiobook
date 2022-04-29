@@ -1,4 +1,5 @@
 const video = document.querySelector("video");
+const textElement = document.querySelector("[data-text");
 
 async function setUp() {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -16,10 +17,15 @@ async function setUp() {
 
         document.addEventListener("keypress", async e => {
             if (e.code !== "Space") return
-            
+
             canvas.getContext("2d").drawImage(video, 0, 0, video.width, video.height);
-            const { data } = await worker.recognize(canvas);
-            console.log(data);
+            const { 
+                data: { text }  
+            } = await worker.recognize(canvas);
+
+            speechSynthesis.speak(new SpeechSynthesisUtterance(text.replace(/\s/g, " ")))
+            
+            textElement.textContent = text;
         })
     })
 }
